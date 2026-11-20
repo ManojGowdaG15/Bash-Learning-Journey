@@ -1,0 +1,77 @@
+freeCodeCamp Project Exploration
+===============================
+
+This note records a terminal session exploring the freeCodeCamp project
+directory and one of its installed Node.js packages.
+
+Project directory
+-----------------
+
+The project root contained package.json, package-lock.json, setup and reset
+scripts, a test directory, and node_modules. The package files describe the
+project and its dependency setup; node_modules contains packages installed
+for the project.
+
+Commands and observations
+-------------------------
+
+1. `ls`
+   Listed the contents of the freeCodeCamp project root, including
+   `node_modules`, `package.json`, `package-lock.json`, `setup.sh`, `reset.sh`,
+   and `test`.
+
+2. `cd node_modules`, followed by `ls`
+   Entered the installed-dependencies directory and listed the package
+   folders there. The listing included the `has` package.
+
+3. `ls node_modules`
+   This failed because the current directory was already `node_modules`, and
+   there was no nested directory with that name. A relative path is resolved
+   from the current working directory.
+
+4. `ls -l`
+   Displayed a detailed listing with permissions, ownership, sizes, and
+   modification times. The package folders and files were visible directly
+   inside the current directory.
+
+5. `cd has`, followed by `ls`
+   Opened the installed `has` package. Its files included a README, a
+   package manifest, a license, and `src` and `test` directories.
+
+6. `more README.md`
+   Read the package documentation. The package provides a helper for checking
+   whether an object has one of its own properties. The documentation also
+   describes installation and a small usage example.
+
+7. `more LICENSE_MIT`, followed by `more LICENSE-MIT`
+   The first command failed because the filename used an underscore, while
+   the actual filename uses a hyphen. The corrected command displayed the
+   MIT license. This was a useful reminder to copy filenames exactly.
+
+What I learned
+--------------
+
+- `ls` lists entries in the current directory; `ls -l` adds file details.
+- `cd` changes the working directory, so relative paths depend on where I am.
+- A directory name can appear in the listing without being nested inside the
+  directory I have already entered.
+- Package READMEs explain a dependency's purpose and how it is used.
+- Package manifests and tests are useful places to learn about a package's
+  metadata and behavior.
+- Installed dependencies commonly live in `node_modules`. They are usually
+  managed by the project's package manager rather than edited directly.
+- Exact spelling matters in shell paths, including punctuation such as
+  hyphens and underscores.
+- The package included an MIT license. When reusing or distributing software,
+  check its license and follow its terms, including retaining required notices.
+
+Practice ideas
+--------------
+
+- From the project root, use `pwd` and `ls -l` to confirm the current
+  directory and inspect its contents.
+- Enter a subdirectory, then compare `ls` with `ls ..`.
+- In `node_modules`, inspect a package's README, manifest, source, tests, and
+  license without modifying the installed files.
+- If a path fails, use `ls` to confirm the current directory and exact
+  filename before trying again.
