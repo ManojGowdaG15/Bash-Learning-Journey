@@ -1,0 +1,333 @@
+
+You will be making a website boilerplate. You can make a new folder with mkdir <folder_name>. mkdir stands for "make directory". Make a website directory in this project folder. Remember that "directory" and "folder" mean the same thing.
+
+camper: /project$ mkdir website
+
+---------------------------------------------------------------------------------------------
+List what's here to make sure it got created.
+
+camper: /project$ ls
+freeCodeCamp  website
+
+---------------------------------------------------------------------------------------------
+It worked. The website files will be in the new directory. Change to the website directory so you can start creating them.
+
+camper: /project$ cd website
+
+---------------------------------------------------------------------------------------------
+List the contents of the website folder.
+
+camper: /website$ ls
+
+---------------------------------------------------------------------------------------------
+
+It's brand new, there's nothing in it yet. The echo command lets you print anything to the terminal. You used it in the first lesson. Just type what you want to print after it. Use it to print hello website to the terminal.
+
+camper: /website$ echo hello website
+hello website
+
+----------------------------------------------------------------------------------------------
+Websites usually have an index.html file. You can use touch <filename> to create a new file. Create index.html in the website folder.
+
+camper: /website$ touch index.html
+
+----------------------------------------------------------------------------------------------
+They usually have a CSS file as well. Create styles.css in the website folder using the same method.
+
+camper: /website$ touch styles.css
+
+camper: /website$ ls
+index.html  styles.css
+
+------------------------------------------------------------------------------------------------
+There they are. Next is a JavaScript file. Create index.js in the website folder with the method you have been using.
+
+camper: /website$ touch index.js
+
+------------------------------------------------------------------------------------------------
+You might turn this into a git repository. Create .gitignore in the website folder with the same method.
+
+camper: /website$ touch .gitignore
+
+------------------------------------------------------------------------------------------------
+List the contents of the website folder to see your new files.
+
+camper: /website$ ls
+index.html  index.js  styles.css
+
+------------------------------------------------------------------------------------------------
+There's three files, but where's the .gitignore file? I think it's hidden. Most commands have a --help flag to show what the command can do. Display the "help" menu for the ls command. Here's an example: command <flag>
+
+camper: /website$ ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                               e.g., '--block-size=M'; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                               modification of file status information);
+                               with -l: show ctime and sort by name;
+                               otherwise: sort by ctime, newest first
+  -C                         list entries by columns
+      --color[=WHEN]         colorize the output; WHEN can be 'always' (default
+                               if omitted), 'auto', or 'never'; more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         do not sort, enable -aU, disable -ls --color
+  -F, --classify             append indicator (one of */=>@|) to entries
+      --file-type            likewise, except do not append '*'
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                               single-column -1, verbose -l, vertical -C
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                               can be augmented with a --sort option, but any
+                               use of --sort=none (-U) disables grouping
+  -G, --no-group             in a long listing, don't print group names
+  -h, --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
+      --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                               that points to a directory
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                               (overridden by -a or -A)
+      --hyperlink[=WHEN]     hyperlink file names; WHEN can be 'always'
+                               (default if omitted), 'auto', or 'never'
+      --indicator-style=WORD  append indicator with style WORD to entry names:
+                               none (default), slash (-p),
+                               file-type (--file-type), classify (-F)
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for disk usage;
+                               used only with -s and per directory totals
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                               link, show information for the file the link
+                               references rather than for the link itself
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print entry names without quoting
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                               unless program is 'ls' and output is a terminal)
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                               literal, locale, shell, shell-always,
+                               shell-escape, shell-escape-always, c, escape
+                               (overrides QUOTING_STYLE environment variable)
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size, largest first
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                               time (-t), version (-v), extension (-X)
+      --time=WORD            with -l, show time as WORD instead of default
+                               modification time: atime or access or use (-u);
+                               ctime or status (-c); also use specified time
+                               as sort key if --sort=time (newest first)
+      --time-style=TIME_STYLE  time/date format with -l; see TIME_STYLE below
+  -t                         sort by modification time, newest first
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                               with -l: show access time and sort by name;
+                               otherwise: sort by access time, newest first
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           set output width to COLS.  0 means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+  -1                         list one file per line.  Avoid '\n' with -q or -b
+      --help     display this help and exit
+      --version  output version information and exit
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+
+The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT.
+FORMAT is interpreted like in date(1).  If FORMAT is FORMAT1<newline>FORMAT2,
+then FORMAT1 applies to non-recent files and FORMAT2 to recent files.
+TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale.
+Also the TIME_STYLE environment variable sets the default style to use.
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors command to set it.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/ls>
+or available locally via: info '(coreutils) ls invocation'
+
+
+------------------------------------------------------------------------------------
+camper: /website$ ls --all
+.  ..  .gitignore  index.html  index.js  styles.css
+
+
+-------------------------------------------------------------------------------------
+There's the hidden file. Do you see it? It didn't display before. It also includes . and ... You used cd .. to go back a folder earlier. Change to the . directory.
+
+camper: /website$ cd .
+
+
+-------------------------------------------------------------------------------------
+You didn't go anywhere. The . takes you to the folder you are in, and .. takes you back, or up, a folder. Websites need some images. Create background.jpg in the website folder.
+
+touch background.jpg
+
+
+-------------------------------------------------------------------------------------
+Looks like images show up in pink. There's also three fonts to use for the website. The first one is "roboto". Create roboto.font in the website folder.
+
+camper: /website$ cd .
+camper: /website$ touch background.jpg
+camper: /website$ touch header.png
+camper: /website$ touch footer.jpeg
+camper: /website$ 
+camper: /website$ ls
+background.jpg  footer.jpeg  header.png  index.html  index.js  styles.css
+camper: /website$ touch roboto.font
+camper: /website$ 
+
+
+-------------------------------------------------------------------------------------
+
+1. Navigation & Viewing Help
+
+• Prompt: List what's here to make sure it got created.
+	• Command: ls
+• Prompt: Display the "help" menu for the ls command.
+	• Command: ls --help
+• Prompt: Change to the . directory.
+	• Command: cd .
+• Prompt: Change into the images folder.
+	• Command: cd images
+• Prompt: Go back to the website folder from client/assets/images (three folders back).
+	• Command: cd ../../..
+
+2. Creating Files & Folders (touch & mkdir)
+
+• Prompt: Create background.jpg in the website folder.
+	• Command: touch background.jpg
+• Prompt: Create roboto.font in the website folder.
+	• Command: touch roboto.font
+• Prompt: Make a client directory in the website folder.
+	• Command: mkdir client
+• Prompt: Make a src directory in the client folder from website.
+	• Command: mkdir client/src
+• Prompt: Make a new directory named assets in the client folder.
+	• Command: mkdir assets
+• Prompt: Make an images directory in the assets folder.
+	• Command: mkdir images
+• Prompt: Make a new icons folder in your assets folder while in the website folder.
+	• Command: mkdir client/assets/icons
+• Prompt: Make a fonts folder in your assets folder from website.
+	• Command: mkdir client/assets/fonts
+• Prompt: Create roboto-bold.woff in your new fonts folder from website.
+	• Command: touch client/assets/fonts/roboto-bold.woff
+• Prompt: Create roboto-light.woff in your new fonts folder from website.
+	• Command: touch client/assets/fonts/roboto-light.woff
+• Prompt: Create lato-bold.ttf in the new fonts folder from website.
+	• Command: touch client/assets/fonts/lato-bold.ttf
+• Prompt: Create lato-light.ttf in your new fonts folder from website.
+	• Command: touch client/assets/fonts/lato-light.ttf
+• Prompt: Create package.json in the website folder.
+	• Command: touch package.json
+• Prompt: Create server.js in the website folder.
+	• Command: touch server.js
+
+3. Finding Files & Viewing Trees (find)
+
+• Prompt: View the file tree of the website folder.
+	• Command: find
+• Prompt: View the file tree of the client folder from the website folder.
+	• Command: find client
+• Prompt: View the "help" menu of the find command.
+	• Command: find --help
+• Prompt: Search for index.html using find.
+	• Command: find -name index.html
+• Prompt: Search for styles.css using find.
+	• Command: find -name styles.css
+• Prompt: Search for images using find.
+	• Command: find -name images
+• Prompt: View the file tree of client/assets/fonts from website.
+	• Command: find client/assets/fonts
+• Prompt: Use find to view the tree of toms-website.
+	• Command: find toms-website
+• Prompt: Use find to view the tree of the website-boilerplate folder to make sure it matches.
+	• Command: find website-boilerplate
+
+4. Moving & Renaming (mv)
+
+• Prompt: Move roboto.woff to the fonts folder.
+	• Command: mv roboto.woff fonts
+• Prompt: Move lato.ttf to the fonts folder.
+	• Command: mv lato.ttf fonts
+• Prompt: Move menlo.otf to the fonts folder.
+	• Command: mv menlo.otf fonts
+• Prompt: Move index.html to the client/src folder from website.
+	• Command: mv index.html client/src
+• Prompt: Move index.js to client/src from website.
+	• Command: mv index.js client/src
+• Prompt: Move styles.css to client/src.
+	• Command: mv styles.css client/src
+• Prompt: Move header.png back to the website folder (..).
+	• Command: mv header.png ..
+• Prompt: Move header.png to client/assets/images.
+	• Command: mv header.png client/assets/images
+• Prompt: Move images/footer.jpeg to client/assets/images.
+	• Command: mv images/footer.jpeg client/assets/images
+• Prompt: Move CodeAlly.svg to client/assets/icons.
+	• Command: mv CodeAlly.svg client/assets/icons
+• Prompt: Move CodeRoad.svg to client/assets/icons.
+	• Command: mv CodeRoad.svg client/assets/icons
+• Prompt: Move freeCodeCamp.svg to client/assets/icons.
+	• Command: mv freeCodeCamp.svg client/assets/icons
+• Prompt: Rename the website folder to website-boilerplate.
+	• Command: mv website website-boilerplate
+
+5. Removing Files & Folders (rm & rmdir)
+
+• Prompt: Try to remove the images folder with rmdir.
+	• Command: rmdir images
+• Prompt: Remove background.jpg inside the website/images folder.
+	• Command: rm images/background.jpg
+• Prompt: View the "help" menu of the rm command.
+	• Command: rm --help
+• Prompt: Remove the old fonts folder in website recursively.
+	• Command: rm -r fonts
+
+6. Writing Text & Copying Folders (echo & cp)
+
+• Prompt: Print I made this boilerplate to README.md.
+	• Command: echo I made this boilerplate >> README.md
+• Prompt: Add from the command line to README.md.
+	• Command: echo from the command line >> README.md
+• Prompt: Add for the freeCodeCamp bash lessons to README.md.
+	• Command: echo for the freeCodeCamp bash lessons >> README.md
+• Prompt: View the "help" menu of the cp command.
+	• Command: cp --help
+• Prompt: Copy the whole website-boilerplate folder into toms-website.
+	• Command: cp -r website-boilerplate toms-website
+• Prompt: List the contents of the project folder to see the new copy.
+	• Command: ls
+
